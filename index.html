@@ -13,9 +13,9 @@
 	<body>
 		<section class="todoapp" ng-app="mytodos" ng-controller="myController">
 			<header class="header">
-				<h1>todos</h1>
+				<h1>事务列表</h1>
 				<form ng-submit="add()">
-					<input class="new-todo" placeholder="What needs to be done?" autofocus ng-model="innerText">
+					<input class="new-todo" placeholder="什么需要记下？" autofocus ng-model="innerText">
 				</form>
 			</header>
 			<!-- This section should be hidden by default and shown when there are todos -->
@@ -40,21 +40,21 @@
 			<!-- This footer should hidden by default and shown when there are todos -->
 			<footer class="footer">
 				<!-- This should be `0 items left` by default -->
-				<span class="todo-count"><strong>{{todos.length}}</strong> item left</span>
+				<span class="todo-count"><strong>{{todos.length}}</strong> 项</span>
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a ng-class="{selected:loc.$$hash == '/'}" href="#/" >All全部</a>
+						<a ng-class="{selected:loc.$$hash == '/'}" href="#/" >所有</a>
 					</li>
 					<li>
-						<a ng-class="{selected:loc.$$hash == '/active'}" href="#/active">Active</a>
+						<a ng-class="{selected:loc.$$hash == '/active'}" href="#/active">正在办</a>
 					</li>
 					<li>
-						<a ng-class="{selected:loc.$$hash == '/completed'}" href="#/completed" >Completed</a>
+						<a ng-class="{selected:loc.$$hash == '/completed'}" href="#/completed" >已完成</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed" ng-click="clear()" ng-show="hasCompleted()">Clear completed</button>
+				<button class="clear-completed" ng-click="clear()" ng-show="hasCompleted()">清空已完成</button>
 			</footer>
 		</section>
 		<footer class="info">
